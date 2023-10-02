@@ -1,3 +1,7 @@
+# work tree folders
+.metals/
+.vscode/
+
 *.class
 *.log
 
