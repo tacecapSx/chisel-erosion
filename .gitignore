@@ -1,6 +1,11 @@
 # work tree folders
 .metals/
 .vscode/
+.bloop/
+.bsp/
+generated/
+project/
+target/
 
 *.class
 *.log
