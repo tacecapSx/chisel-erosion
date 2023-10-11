@@ -4,7 +4,7 @@ A solution to assignment 2 of Computer Systems (02132) made by Martin Handest [s
 ## Instructions
 
 ## Progress
-- [ ] Implement ProgramCounter module
+- [x] Implement ProgramCounter module
 - [ ] Define ISA and compile
 - [ ] Encode instructions
 - [ ] Draft CPU architecture
