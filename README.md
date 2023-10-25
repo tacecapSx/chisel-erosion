@@ -5,8 +5,8 @@ A solution to assignment 2 of Computer Systems (02132) made by Martin Handest [s
 
 ## Progress
 - [x] Implement ProgramCounter module
-- [ ] Define ISA and compile
-- [ ] Encode instructions
+- [x] Define ISA and compile
+- [x] Encode instructions
 - [ ] Draft CPU architecture
 - [ ] Implement ALU module
 - [ ] Implement RegisterFile module
