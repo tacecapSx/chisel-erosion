@@ -9,7 +9,7 @@ A solution to assignment 2 of Computer Systems (02132) made by Martin Handest [s
 - [x] Encode instructions
 - [ ] Draft CPU architecture
 - [ ] Implement ALU module
-- [ ] Implement RegisterFile module
+- [x] Implement RegisterFile module
 - [ ] Implement ControlUnit module
 - [ ] Put everything together in CPUTop module
 - [ ] Run, test, debug
