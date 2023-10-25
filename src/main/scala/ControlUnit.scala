@@ -10,8 +10,9 @@ class ControlUnit extends Module {
     val regC = Output(UInt(4.W))
     val immediate = Output(UInt(16.W))
     val aluOp = Output(Bool())
-    val memRead = Output(Bool())
-    val memWrite = Output(Bool())
+    val loadIm = Output(Bool())
+    val loadBy = Output(Bool())
+    val saveBy = Output(Bool())
     val branch = Output(Bool())
     val jump = Output(Bool())
     val end = Output(Bool())
@@ -29,8 +30,9 @@ class ControlUnit extends Module {
   io.regC := regC
   io.immediate := immediate
   io.aluOp := false.B
-  io.memRead := false.B
-  io.memWrite := false.B
+  io.loadIm := false.B
+  io.loadBy := false.B
+  io.saveBy := false.B
   io.branch := false.B
   io.jump := false.B
   io.end := false.B
@@ -50,15 +52,15 @@ class ControlUnit extends Module {
     }
     is("b0011".U) {
       // Load immediate
-      io.memRead := true.B
+      io.loadIm := true.B
     }
     is("b0100".U) {
       // Load byte
-      io.memRead := true.B
+      io.loadBy := true.B
     }
     is("b0101".U) {
       // Save byte
-      io.memWrite := true.B
+      io.saveBy := true.B
     }
     is("b0110".U) {
       // Branch if equals zero
