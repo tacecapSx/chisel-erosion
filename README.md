@@ -8,7 +8,7 @@ A solution to assignment 2 of Computer Systems (02132) made by Martin Handest [s
 - [x] Define ISA and compile
 - [x] Encode instructions
 - [ ] Draft CPU architecture
-- [ ] Implement ALU module
+- [x] Implement ALU module
 - [x] Implement RegisterFile module
 - [ ] Implement ControlUnit module
 - [ ] Put everything together in CPUTop module
