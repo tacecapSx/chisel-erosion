@@ -6,11 +6,11 @@ import java.util
 
 object Programs{
   val program1 = Array(
-    "hFFEC0003".U(32.W), // li a0, -20
+    "hFFFF0003".U(32.W), // li a0, -1
     "h00000023".U(32.W), // li a2, 0
     "h00000013".U(32.W), // li a1, 0
-    "h00140332".U(32.W), // addi a0, a0, 20
-    "hFE700042".U(32.W), // addi t0, a0, -400
+    "h00010332".U(32.W), // addi a0, a0, 1
+    "hFFEC0042".U(32.W), // addi t0, a0, -20
     "h001F0046".U(32.W), // beqz t0, end (inst. 31)
     "h00000244".U(32.W), // lb t0, 0(a2)
     "h00000432".U(32.W), // addi a3, t0, 0
