@@ -10,9 +10,9 @@ class ALU extends Module {
     val y = Output(UInt(16.W))
   })
 
-  val addition = io.a + io.b
+  val addition = io.a.asSInt() + io.b.asSInt()
 
-  val eqZero = io.fn && (io.a === 0.U)
+  val eqZero = (io.a === 0.U)
 
-  io.y := Mux(eqZero, 0.U, addition)
+  io.y := Mux(io.fn, eqZero.asUInt(), addition.asUInt())
 }

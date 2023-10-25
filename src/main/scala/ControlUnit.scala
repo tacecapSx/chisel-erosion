@@ -9,7 +9,9 @@ class ControlUnit extends Module {
     val regB = Output(UInt(4.W))
     val regC = Output(UInt(4.W))
     val immediate = Output(UInt(16.W))
-    val aluOp = Output(Bool())
+    val nop = Output(Bool())
+    val add = Output(Bool())
+    val addIm = Output(Bool())
     val loadIm = Output(Bool())
     val loadBy = Output(Bool())
     val saveBy = Output(Bool())
@@ -18,18 +20,20 @@ class ControlUnit extends Module {
     val end = Output(Bool())
   })
   
-  val opcode = io.instruction(31, 28)
-  val regA = io.instruction(27, 24)
-  val regB = io.instruction(23, 20)
-  val regC = io.instruction(19, 16)
-  val immediate = io.instruction(15, 0)
+  val opcode =    (io.instruction & "h0000000F".U)
+  val regA =      (io.instruction & "h000000F0".U) >> 4
+  val regB =      (io.instruction & "h00000F00".U) >> 8
+  val regC =      (io.instruction & "h0000F000".U) >> 12
+  val immediate = (io.instruction & "hFFFF0000".U) >> 16
 
   io.opcode := opcode
   io.regA := regA
   io.regB := regB
   io.regC := regC
   io.immediate := immediate
-  io.aluOp := false.B
+  io.nop := false.B
+  io.add := false.B
+  io.addIm := false.B
   io.loadIm := false.B
   io.loadBy := false.B
   io.saveBy := false.B
@@ -37,18 +41,20 @@ class ControlUnit extends Module {
   io.jump := false.B
   io.end := false.B
 
+  //printf("%d",opcode)
+
   switch(opcode) {
     is("b0000".U) {
       // No operation (nop)
-      io.end := true.B
+      io.nop := true.B
     }
     is("b0001".U) {
       // Addition
-      io.aluOp := true.B
+      io.add := true.B
     }
     is("b0010".U) {
       // Immediate addition
-      io.aluOp := true.B
+      io.addIm := true.B
     }
     is("b0011".U) {
       // Load immediate

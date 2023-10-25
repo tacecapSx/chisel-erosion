@@ -11,7 +11,7 @@ A solution to assignment 2 of Computer Systems (02132) made by Martin Handest [s
 - [x] Implement ALU module
 - [x] Implement RegisterFile module
 - [x] Implement ControlUnit module
-- [ ] Put everything together in CPUTop module
+- [x] Put everything together in CPUTop module
 - [ ] Run, test, debug
 - [ ] Evaluate implementation
 - [ ] Write report

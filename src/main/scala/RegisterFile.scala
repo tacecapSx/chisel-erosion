@@ -13,12 +13,12 @@ class RegisterFile extends Module {
     val b = Output(UInt(32.W))
   })
 
-  val registers = Vec(8, RegInit(0.U(32.W)))
+  val registers = Reg(Vec(8, UInt(32.W)))
 
   when(io.writeEnable) {
     registers(io.writeSel) := io.writeData
   }
-
+    
   io.a := registers(io.aSel)
   io.b := registers(io.bSel)
 }

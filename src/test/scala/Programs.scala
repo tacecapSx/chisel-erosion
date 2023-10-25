@@ -9,7 +9,7 @@ object Programs{
     "hFFFF0003".U(32.W), // li a0, -1
     "h00000023".U(32.W), // li a2, 0
     "h00000013".U(32.W), // li a1, 0
-    "h00010332".U(32.W), // addi a0, a0, 1
+    "h00010002".U(32.W), // addi a0, a0, 1
     "hFFEC0042".U(32.W), // addi t0, a0, -20
     "h001F0046".U(32.W), // beqz t0, end (inst. 31)
     "h00000244".U(32.W), // lb t0, 0(a2)
@@ -36,7 +36,7 @@ object Programs{
     "h00140244".U(32.W), // lb t0, 20(a2)
     "h001D0046".U(32.W), // beqz t0, set_zero (inst. 29)
 
-    "h01900035".U(32.W), // sb a3, 400(a2)
+    "h01900235".U(32.W), // sb a3, 400(a2)
     "h00010222".U(32.W), // addi a2, a2, 1
     "h00010112".U(32.W), // addi a1, a1, 1
     "hFFEC0142".U(32.W), // addi t0, a1, -20
